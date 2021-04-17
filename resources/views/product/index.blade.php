@@ -172,6 +172,7 @@
                 return rupiah(data);
               }
             },
+            <?php if (Auth::user()->can('Ubah Produk') || Auth::user()->can('Hapus Produk')): ?>
             {
               "data": "id",
               render: function(data, type, row) {
@@ -186,6 +187,7 @@
                 return btnEdit+" "+btnDelete;
               },
             },
+            <?php endif ?>
         ]
     });
 

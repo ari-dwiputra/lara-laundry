@@ -112,6 +112,7 @@
               "data": "description",
               "defaultContent": "-"
             },
+            <?php if (Auth::user()->can('Ubah Hak Akses') || Auth::user()->can('Hapus Hak Akses')): ?>
             {
               "data": "id",
               render: function(data, type, row) {
@@ -126,6 +127,7 @@
                   return btnEdit+" "+btnDelete;
               },
             },
+          <?php endif ?>
         ]
     });
 

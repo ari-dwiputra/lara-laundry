@@ -322,6 +322,7 @@ $(function(){
               
             }
           },
+          <?php if (Auth::user()->can('Ubah Pengguna') || Auth::user()->can('Hapus Pengguna')): ?>
           {
             "data": "id",
             render: function(data, type, row) {
@@ -340,6 +341,7 @@ $(function(){
                 return btnEdit+" "+btnChangePassword+" "+btnChangeProfile+" "+btnDelete;
             },
           },
+          <?php endif ?>
       ]
   });
   function reloadTable(){

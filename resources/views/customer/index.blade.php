@@ -178,6 +178,7 @@
               "data": "address",
               "defaultContent": "-"
             },
+            <?php if (Auth::user()->can('Ubah Pelanggan') || Auth::user()->can('Hapus Pelanggan')): ?>
             {
               "data": "id",
               render: function(data, type, row) {
@@ -192,6 +193,7 @@
                   return btnEdit+" "+btnDelete;
               },
             },
+            <?php endif ?>
         ]
     });
 

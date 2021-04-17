@@ -135,6 +135,7 @@
               "data": "name",
               "defaultContent": "-"
             },
+            <?php if (Auth::user()->can('Ubah Tipe Produk') || Auth::user()->can('Hapus Tipe Produk')): ?>
             {
               "data": "id",
               render: function(data, type, row) {
@@ -149,6 +150,7 @@
                   return btnEdit+" "+btnDelete;
               },
             },
+            <?php endif ?>
         ]
     });
 

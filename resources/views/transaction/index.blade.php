@@ -68,9 +68,7 @@
                 <th style="background-color: #0000FF;" class="text-white" width="20%" id="date_table">Tanggal</th>
                 <th style="background-color: #0000FF;" class="text-white" width="15%" id="total_table">Total</th>
                 <th style="background-color: #0000FF;" class="text-white" width="15%" id="status_table">Status</th>
-                @if (auth()->user()->can('Proses Transaksi') || auth()->user()->can('Cetak Transaksi'))
                 <th style="background-color: #FFA32F;" class="text-white" width="20%">Aksi</th>
-                @endif
             </tr>
           </thead>
       </table>
@@ -165,7 +163,6 @@
             {
               "data": "id",
               render: function(data, type, row) {
-                console.log(row.last_transaction_statuses.status)
                   var btnInfo = '<button id="btnInfo" name="btnInfo" data-id="' + data + '" type="button" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Info"><i class="fa fa-info-circle"></i></button>';
                   var btnStatus = '';
                   if("{{Auth::user()->can('Proses Transaksi')}}"){
